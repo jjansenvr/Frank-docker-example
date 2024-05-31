@@ -1,23 +1,51 @@
-# Frank-docker-example
+# Frank-docker
+## Setup local environment
+Prerequisites:  docker desktop
 
-# Setup local environment
-prerequisites:  docker desktop
+### Add Frank!Flow
+- **Download :**
+  latest version of frank-flow_version war
+- **place in :**
+  root dir of your project
+- **rename to :**
+  frank-flow.war
+
+### Start local environment
+- use `Docker compose up` to start the docker image
 
 
-## ADD FRANK!FLOW
-- Download latest version of frank-flow_version war 
-- place it in root dir of frank4......
-- frank-flow.war
 
-## Start local environment
-- Docker compose up to run
+## deploy to your local K8S cluster
 
+### Build a config jar for K8s deployment
+I have added a `build.bat` file that will package (zip) your configurations dir in a jar format. It will have a unique name
 
+```
+**Disclaimer** 
+This approach is only suitable for local use. 
+It will not work with custom code, in this case a proper maven build is needed) 
 
-#Build version for K8s deployment if upload (you should use CICD to build / test and deploy)
+```
 
-## create a Jar file of your configurations (Not usable wit custom  code, in this case the buidl should be done with maven)
+### create a Jar file of your configurations (Not usable wit custom  code, in this case the build should be done using maven)
 - run build.bat it will create a zipfile with configuration directories
 - use the jar file from the builds dir in your K8S helm chart
 
-
+```
+apiVersion: frankframework.org/v1
+kind: Frank
+metadata:
+  name: frank-docker-example
+  namespace: frank-docker-example
+spec:
+  containerImage: nexus.frankframework.org/frankframework
+  imageVersion: 8.2.0-SNAPSHOT
+  replicas: 1
+  resourcesMap:
+    frank2test: file://C/git/Frank-docker-example/builds/Frank-docker-example_2024-05-31_14-15-56.jar
+  envVarsMap:
+    example-env-var: value
+  labelsMap:
+    example-label: label
+  podManager: Deployment
+```
