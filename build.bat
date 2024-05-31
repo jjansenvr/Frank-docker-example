@@ -18,7 +18,7 @@ REM Get the parent folder name
 for %%I in (.) do set "parentName=%%~nxI"
 
 REM Zip the directory using WinRAR
-"C:\Program Files\WinRAR\WinRAR.exe" a -afzip -m5 -ed -pTest -r -ep1 "%~dp0builds/!parentName!_%stamp%.jar" "%~dp0configurations"
+"C:\Program Files\WinRAR\WinRAR.exe" a -afzip -m5 -ed -pTest -r -ep1 "%~dp0builds/!parentName!_%stamp%.jar" "%~dp0configurations/*"
 
 
 REM Display a message 
