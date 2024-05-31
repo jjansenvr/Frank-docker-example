@@ -1,0 +1,16 @@
+apiVersion: frankframework.org/v1
+kind: Frank
+metadata:
+  name: frank-docker-example
+  namespace: frank-docker-example
+spec:
+  containerImage: nexus.frankframework.org/frankframework
+  imageVersion: 8.2.0-SNAPSHOT
+  replicas: 1
+  resourcesMap:
+    frank2test: file://C/git/Frank-docker-example/builds/frank-docker-example_2024-05-28_16-26-23.jar
+  envVarsMap:
+    example-env-var: value
+  labelsMap:
+    example-label: label
+  podManager: Deployment

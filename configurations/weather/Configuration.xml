@@ -1,0 +1,4 @@
+<Configuration>
+	<Include ref="Configuration_weather.xml"/>
+</Configuration>
+

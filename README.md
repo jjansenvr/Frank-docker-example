@@ -1,15 +1,23 @@
 # Frank-docker-example
-example to create a Frank Framework application and package it as a docker image
+
+# Setup local environment
+prerequisites:  docker desktop
 
 
-## My goal 
-Run a Frank application against a mongo backend on minikube K8s
+## ADD FRANK!FLOW
+- Download latest version of frank-flow_version war 
+- place it in root dir of frank4......
+- frank-flow.war
 
-## Preparation steps (windows environment)
+## Start local environment
+- Docker compose up to run
 
-## minikube on hyper-v (https://minikube.sigs.k8s.io/docs/start/ ![image](https://user-images.githubusercontent.com/3921911/170055302-16b071dd-9f3c-4497-bb1b-871e55bc2162.png)
-)
-- Powershell - run as admin-
-- !tip start powershell from elevated powershell will inherit administrator rights
-- 
+
+
+#Build version for K8s deployment if upload (you should use CICD to build / test and deploy)
+
+## create a Jar file of your configurations (Not usable wit custom  code, in this case the buidl should be done with maven)
+- run build.bat it will create a zipfile with configuration directories
+- use the jar file from the builds dir in your K8S helm chart
+
 
