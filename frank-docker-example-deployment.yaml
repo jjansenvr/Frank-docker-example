@@ -8,7 +8,7 @@ spec:
   imageVersion: 8.2.0-SNAPSHOT
   replicas: 1
   resourcesMap:
-    frank-docker-example: https://github.com/jjansenvr/Frank-docker-example/raw/main/builds/Frank-docker-example_2024-05-31_15-06-25.jar
+    frank-docker-example: -L https://github.com/jjansenvr/Frank-docker-example/raw/main/builds/Frank-docker-example_2024-05-31_15-50-13.jar
   envVarsMap:
     instance.name: frank-docker-example
     dtap.stage: LOC
