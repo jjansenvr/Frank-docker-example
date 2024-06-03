@@ -1,4 +1,4 @@
-# Frank-docker
+# frank-development-docker
 ## Setup local environment
 Prerequisites:  docker desktop
 
