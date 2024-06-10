@@ -1,4 +1,5 @@
-# frank-development-docker
+# Local frank development environment with Docker
+
 ## Setup local environment
 Prerequisites:  docker desktop
 
@@ -12,6 +13,23 @@ Prerequisites:  docker desktop
 
 ### Start local environment
 - use `Docker compose up` to start the docker image
+
+
+### XSD for typeahead and configuration validation in VSCode
+the frankrunner automates downloading the of the 
+- open the frankdoc http://localhost:8080/iaf/frankdoc/#/All
+- download xsd to your local configurations dir
+
+
+
+
+
+
+
+
+==========================================================================================================
+# kubernetes stuff
+
 
 
 
